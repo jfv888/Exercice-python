@@ -1,7 +1,25 @@
-# This is a sample Python script.
+Prices = [310, 315, 275, 295, 260, 270, 290, 230, 255, 250]
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+def Buy_low_sell_high(Prices):
+    Range = 0
+    Diff = 0
+    Buy_price = 0
+    Sell_price = 0
+    for x in Prices:
+        Range = Range + 1
+        for y in Prices[Range:len(Prices)]:
+            if (y - x) > Diff:
+                Buy_price = x
+                Sell_price = y
+                Diff = (y - x)
+    print("Buy price: " + str(Buy_price))
+    print("Sell price: " + str(Sell_price))
+    print("Profit: " + str(Diff))
+
+
+Buy_low_sell_high(Prices)
+
 
 
 def print_hi(name):
@@ -13,4 +31,4 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
